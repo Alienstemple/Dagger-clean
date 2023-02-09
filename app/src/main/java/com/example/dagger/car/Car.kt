@@ -1,6 +1,7 @@
-package com.example.dagger
+package com.example.dagger.car
 
 import android.util.Log
+import com.example.dagger.car.engine.Engine
 import javax.inject.Inject
 
 class Car @Inject constructor(val wheels: Wheels) {

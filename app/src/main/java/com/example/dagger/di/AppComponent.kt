@@ -1,10 +1,9 @@
 package com.example.dagger.di
 
-import com.example.dagger.Car
 import com.example.dagger.MainActivity
 import dagger.Component
 
-@Component
+@Component (modules = [WheelsModule::class])
 interface AppComponent {
 //    fun getCar(): Car
 
