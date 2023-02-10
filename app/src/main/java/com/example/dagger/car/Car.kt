@@ -4,7 +4,7 @@ import android.util.Log
 import com.example.dagger.car.engine.Engine
 import javax.inject.Inject
 
-class Car @Inject constructor(val wheels: Wheels) {
+class Car @Inject constructor(val wheels: Wheels, val driver: Driver) {
 
     @Inject
     lateinit var engine: Engine
