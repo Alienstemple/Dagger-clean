@@ -6,8 +6,8 @@ import dagger.Provides
 import javax.inject.Singleton
 
 @Module
-class DriverModule {
+class DriverModule(private val driverName: String) {
     @Provides
     @Singleton
-    fun provideDriver() = Driver()
+    fun provideDriver() = Driver(driverName)
 }

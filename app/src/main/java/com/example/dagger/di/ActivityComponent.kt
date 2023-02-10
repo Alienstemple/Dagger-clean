@@ -7,23 +7,17 @@ import dagger.Subcomponent
 import javax.inject.Named
 
 @PerActivity
-@Subcomponent (modules = [WheelsModule::class, DieselEngineModule::class])
+@Subcomponent(modules = [WheelsModule::class, PetrolEngineModule::class])
 interface ActivityComponent {
 //    fun getCar(): Car
 
     fun inject(activity: MainActivity)
 
-    /*@Component.Builder
-    interface Builder {
-
-        @BindsInstance
-        fun horsePower(@Named("horsePower") horsePower: Int): Builder
-
-        @BindsInstance
-        fun engineCapacity(@Named("engineCapacity") engineCapacity: Int): Builder
-
-        fun appComponent(component: AppComponent): Builder
-
-        fun build(): ActivityComponent
-    }*/
+    @Subcomponent.Factory
+    interface Factory {
+        fun create(
+            @BindsInstance @Named("horsePower") horsePower: Int,
+            @BindsInstance @Named("engineCapacity") engineCapacity: Int,
+        ): ActivityComponent
+    }
 }

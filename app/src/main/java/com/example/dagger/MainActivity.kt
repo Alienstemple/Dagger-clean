@@ -17,7 +17,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val component = (application as ExampleApp).getComponent()
-            .getActivityComponent(DieselEngineModule(120))
+            .getActivityComponentFactory().create(200, 1500)
 
         component.inject(this)
 

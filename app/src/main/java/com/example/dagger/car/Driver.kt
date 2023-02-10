@@ -5,6 +5,6 @@ import javax.inject.Inject
 import javax.inject.Singleton
 
 
-class Driver {
+class Driver(val name: String) {
     // Не имеем доступа к этому классу
 }
