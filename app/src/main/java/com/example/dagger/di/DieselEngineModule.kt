@@ -8,5 +8,8 @@ import dagger.Provides
 @Module
 class DieselEngineModule(private val horsePower: Int) {
     @Provides
-    fun provideDieselEngine(): Engine = DieselEngineImpl(horsePower)
+    fun provideHorsePower(): Int = horsePower
+
+    @Provides
+    fun provideDieselEngine(engine: DieselEngineImpl): Engine = engine
 }
