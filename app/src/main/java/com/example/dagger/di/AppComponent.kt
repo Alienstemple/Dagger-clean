@@ -1,27 +1,12 @@
 package com.example.dagger.di
 
-import com.example.dagger.MainActivity
-import dagger.BindsInstance
+import com.example.dagger.car.Driver
 import dagger.Component
-import javax.inject.Named
 import javax.inject.Singleton
 
 @Singleton
-@Component (modules = [WheelsModule::class, PetrolEngineModule::class])
+@Component(modules = [DriverModule::class])
 interface AppComponent {
-//    fun getCar(): Car
-
-    fun inject(activity: MainActivity)
-
-    @Component.Builder
-    interface Builder {
-
-        @BindsInstance
-        fun horsePower(@Named("horsePower") horsePower: Int): Builder
-
-        @BindsInstance
-        fun engineCapacity(@Named("engineCapacity") engineCapacity: Int): Builder
-
-        fun build(): AppComponent
-    }
+    // поставляем Driver, кот долж быть singleton
+    fun getDriver(): Driver
 }
